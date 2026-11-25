@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coleta Seletiva | Viçosa</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/acessibilidade.js" defer></script>
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">
+            <span aria-hidden="true">♻</span>
+            Coleta Seletiva
+        </a>
+
+        <button
+            type="button"
+            id="accessibility-button"
+            class="accessibility-button"
+            aria-expanded="false"
+            aria-controls="accessibility-panel"
+        >
+            <span aria-hidden="true">♿</span>
+            Acessibilidade
+        </button>
+    </header>
+
+    <aside
+        id="accessibility-panel"
+        class="accessibility-panel"
+        aria-label="Configurações de acessibilidade"
+        hidden
+    >
+        <button
+            type="button"
+            id="close-accessibility"
+            class="close-accessibility"
+            aria-label="Fechar acessibilidade"
+        >
+            ×
+        </button>
+
+        <h2>Acessibilidade</h2>
+        <p class="accessibility-description">
+            Escolha os recursos que deseja utilizar para facilitar sua navegação.
+        </p>
+
+        <div class="accessibility-option">
+            <label for="font-toggle">
+                <input type="checkbox" id="font-toggle">
+                Aumentar fonte
+            </label>
+            <p>Amplia os textos de todas as áreas da plataforma.</p>
+        </div>
+
+        <div class="accessibility-option">
+            <label for="color-toggle">
+                <input type="checkbox" id="color-toggle">
+                Modo para daltonismo
+            </label>
+            <p>Utiliza uma paleta alternativa para facilitar a diferenciação visual.</p>
+        </div>
+
+        <div class="accessibility-option">
+            <label for="reader-toggle">
+                <input type="checkbox" id="reader-toggle">
+                Leitura em voz alta
+            </label>
+            <p>Permite ouvir o conteúdo ao selecionar textos da página.</p>
+        </div>
+    </aside>
+
+    <main class="main-container">
+        <section class="welcome-section">
+            <h1>Bem-vindo à Coleta Seletiva de Viçosa!</h1>
+            <p>
+                Acesse a plataforma de acordo com seu perfil para encontrar
+                informações e serviços sobre a coleta seletiva.
+            </p>
+
+            <h2>Como deseja acessar?</h2>
+
+            <div class="profile-grid">
+                <a href="pages/acesso/login.html?perfil=morador" class="profile-card">
+                    <span class="profile-icon" aria-hidden="true">🏠</span>
+                    <span class="profile-name">Morador ou estudante</span>
+                    <span class="profile-description">
+                        Consulte calendários, materiais recicláveis e pontos de coleta.
+                    </span>
+                </a>
+
+                <a href="pages/acesso/login.html?perfil=comerciante" class="profile-card">
+                    <span class="profile-icon" aria-hidden="true">🏪</span>
+                    <span class="profile-name">Comerciante</span>
+                    <span class="profile-description">
+                        Solicite coletas, localize pontos de entrega e acompanhe serviços.
+                    </span>
+                </a>
+
+                <a href="pages/acesso/login.html?perfil=associacao" class="profile-card">
+                    <span class="profile-icon" aria-hidden="true">♻️</span>
+                    <span class="profile-name">Associação de catadores</span>
+                    <span class="profile-description">
+                        Gerencie coletas, solicitações e informações da associação.
+                    </span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Coleta Seletiva de Viçosa - <span data-current-year></span></p>
+    </footer>
+</body>
+</html>

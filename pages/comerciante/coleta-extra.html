@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coleta Extraordinária | Coleta Seletiva</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/acessibilidade.js" defer></script>
+    <script src="../../js/app.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="inicio.html" class="logo">
+            <span aria-hidden="true">♻</span>
+            Coleta Seletiva
+        </a>
+        <button type="button" id="accessibility-button"
+            class="accessibility-button"
+            aria-expanded="false" aria-controls="accessibility-panel">
+            <span aria-hidden="true">♿</span> Acessibilidade
+        </button>
+    </header>
+
+    <aside id="accessibility-panel" class="accessibility-panel" hidden>
+        <button type="button" id="close-accessibility"
+            class="close-accessibility" aria-label="Fechar acessibilidade">×</button>
+        <h2>Acessibilidade</h2>
+        <p class="accessibility-description">
+            Escolha os recursos que deseja utilizar para facilitar sua navegação.
+        </p>
+        <div class="accessibility-option">
+            <label for="font-toggle">
+                <input type="checkbox" id="font-toggle"> Aumentar fonte
+            </label>
+            <p>Amplia os textos de todas as áreas da plataforma.</p>
+        </div>
+        <div class="accessibility-option">
+            <label for="color-toggle">
+                <input type="checkbox" id="color-toggle"> Modo para daltonismo
+            </label>
+            <p>Utiliza uma paleta alternativa para facilitar a diferenciação visual.</p>
+        </div>
+        <div class="accessibility-option">
+            <label for="reader-toggle">
+                <input type="checkbox" id="reader-toggle"> Leitura em voz alta
+            </label>
+            <p>Permite ouvir o conteúdo ao selecionar textos da página.</p>
+        </div>
+    </aside>
+
+    <main class="main-container">
+        <button type="button" class="back-button"
+            data-back data-back-url="inicio.html">
+            ← Voltar
+        </button>
+
+        <section class="form-section">
+            <div class="page-heading">
+                <h1>Solicitar coleta extraordinária</h1>
+                <p>
+                    Utilize este formulário quando seu estabelecimento
+                    precisar de uma coleta adicional de recicláveis.
+                </p>
+            </div>
+            
+            <div id="extra-collection-result" class="success-alert" role="status" aria-live="polite" hidden>
+                <span class="success-alert-icon" aria-hidden="true">✓</span>
+                <div>
+                    <strong>Solicitação registrada!</strong>
+                    <p>Sua solicitação foi registrada e está aguardando análise da associação.</p>
+                </div>
+            </div>
+
+            <form id="extra-collection-form" class="form-card">
+                <div class="form-group">
+                    <label for="business-address">Endereço do estabelecimento</label>
+                    <input type="text" id="business-address"
+                        placeholder="Rua, número e bairro" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="material-type">Tipo de material</label>
+                    <select id="material-type" required>
+                        <option value="">Selecione o material</option>
+                        <option value="papel">Papel e papelão</option>
+                        <option value="plastico">Plásticos</option>
+                        <option value="metal">Metais</option>
+                        <option value="vidro">Vidros</option>
+                        <option value="misto">Materiais misturados</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="material-volume">Volume estimado</label>
+                    <select id="material-volume" required>
+                        <option value="">Selecione o volume</option>
+                        <option value="pequeno">Pequeno (até 5 fardos)</option>
+                        <option value="medio">Médio (6 a 20 fardos)</option>
+                        <option value="grande">Grande (mais de 20 fardos)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="collection-photo">Foto dos materiais (opcional)</label>
+                    <p class="field-description">
+                        Envie uma foto para ajudar a equipe a estimar o volume.
+                    </p>
+                    <input type="file" id="collection-photo" accept="image/*">
+                </div>
+
+                <div class="form-group">
+                    <label for="collection-observation">Observações (opcional)</label>
+                    <textarea id="collection-observation" rows="3"
+                        placeholder="Informe detalhes adicionais sobre os materiais ou o acesso ao local."></textarea>
+                </div>
+
+                <button type="submit" class="primary-button">
+                    Enviar solicitação
+                </button>
+            </form>
+
+
+    </main>
+
+    <footer class="footer">
+        <p>Coleta Seletiva de Viçosa - <span data-current-year></span></p>
+    </footer>
+</body>
+</html>

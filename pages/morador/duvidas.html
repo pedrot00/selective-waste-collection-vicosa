@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dúvidas sobre Reciclagem | Coleta Seletiva</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/acessibilidade.js" defer></script>
+    <script src="../../js/app.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="inicio.html" class="logo">♻ Coleta Seletiva</a>
+        <button id="accessibility-button" class="accessibility-button"
+            aria-expanded="false" aria-controls="accessibility-panel">
+            <span aria-hidden="true">♿</span> Acessibilidade
+        </button>
+    </header>
+
+    <aside id="accessibility-panel" class="accessibility-panel" hidden>
+        <div class="accessibility-panel-header">
+            <h2>Acessibilidade</h2>
+            <button id="close-accessibility" aria-label="Fechar painel">✕</button>
+        </div>
+
+        <div class="accessibility-option">
+            <label for="font-toggle">Aumentar fonte</label>
+            <input type="checkbox" id="font-toggle">
+            <p>Aumenta o tamanho de todos os textos da página.</p>
+        </div>
+
+        <div class="accessibility-option">
+            <label for="color-toggle">Modo para daltonismo</label>
+            <input type="checkbox" id="color-toggle">
+            <p>Utiliza uma paleta de cores alternativa.</p>
+        </div>
+
+        <div class="accessibility-option">
+            <label for="reader-toggle">Leitura em voz alta</label>
+            <input type="checkbox" id="reader-toggle">
+            <p>Permite ouvir os textos selecionados ao clicar neles.</p>
+        </div>
+    </aside>
+
+    <main class="main-container">
+        <button class="back-button" data-back data-back-url="inicio.html">
+            ← Voltar
+        </button>
+
+        <section class="question-section">
+            <div class="page-heading">
+                <h1>Tem dúvidas sobre reciclagem?</h1>
+                <p>Envie uma pergunta, uma foto ou um áudio para receber orientações sobre o descarte correto.</p>
+            </div>
+
+            <form id="question-form" class="question-form">
+                <div class="question-option">
+                    <label for="question-text">Escreva sua dúvida</label>
+                    <textarea id="question-text" rows="4"
+                        placeholder="Ex.: Posso descartar uma embalagem de marmita na coleta seletiva?"></textarea>
+                </div>
+
+                <div class="question-option">
+                    <label for="question-image">Enviar uma foto</label>
+                    <p>Fotografe o material ou a embalagem que deseja descartar.</p>
+                    <input type="file" id="question-image" accept="image/*">
+                </div>
+
+                <div class="question-option">
+                    <label for="question-audio">Enviar um áudio</label>
+                    <p>Grave sua pergunta ou envie um áudio já existente.</p>
+                    <input type="file" id="question-audio" accept="audio/*">
+                </div>
+
+                <button type="submit" class="primary-button">
+                    Enviar dúvida
+                </button>
+            </form>
+
+            <section id="question-result" class="question-result" hidden aria-live="polite">
+                <h2>Orientação demonstrativa</h2>
+                <p id="question-answer"></p>
+                <p class="question-disclaimer">
+                    Esta resposta é simulada para demonstração do protótipo.
+                    Em caso de dúvida, consulte o catálogo de materiais.
+                </p>
+                <a href="catalogo.html" class="secondary-button">
+                    Consultar catálogo
+                </a>
+                <button type="button" id="new-question" class="outline-button">
+                    Enviar outra dúvida
+                </button>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Coleta Seletiva de Viçosa - MG © <span data-current-year></span></p>
+    </footer>
+</body>
+</html>

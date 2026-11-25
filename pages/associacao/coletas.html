@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coletas realizadas | Associação</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/acessibilidade.js" defer></script>
+    <script src="../../js/app.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="inicio.html" class="logo">
+            <span aria-hidden="true">♻</span>
+            Coleta Seletiva
+        </a>
+        <button type="button" id="accessibility-button"
+            class="accessibility-button"
+            aria-expanded="false" aria-controls="accessibility-panel">
+            <span aria-hidden="true">♿</span> Acessibilidade
+        </button>
+    </header>
+
+    <aside id="accessibility-panel" class="accessibility-panel" hidden>
+        <button type="button" id="close-accessibility"
+            class="close-accessibility" aria-label="Fechar acessibilidade">×</button>
+        <h2>Acessibilidade</h2>
+        <p class="accessibility-description">
+            Escolha os recursos que deseja utilizar para facilitar sua navegação.
+        </p>
+        <div class="accessibility-option">
+            <label for="font-toggle">
+                <input type="checkbox" id="font-toggle"> Aumentar fonte
+            </label>
+            <p>Amplia os textos de todas as áreas da plataforma.</p>
+        </div>
+        <div class="accessibility-option">
+            <label for="color-toggle">
+                <input type="checkbox" id="color-toggle"> Modo para daltonismo
+            </label>
+            <p>Utiliza uma paleta alternativa para facilitar a diferenciação visual.</p>
+        </div>
+        <div class="accessibility-option">
+            <label for="reader-toggle">
+                <input type="checkbox" id="reader-toggle"> Leitura em voz alta
+            </label>
+            <p>Permite ouvir o conteúdo ao selecionar textos da página.</p>
+        </div>
+    </aside>
+
+    <main class="main-container">
+        <button type="button" class="back-button"
+            data-back data-back-url="inicio.html">
+            ← Voltar
+        </button>
+
+        <section class="management-section">
+            <div class="page-heading">
+                <h1>Coletas realizadas</h1>
+                <p>
+                    Consulte o histórico de recolhimentos e registre
+                    novas coletas realizadas pela associação.
+                </p>
+            </div>
+
+            <section class="collection-form-section">
+                <h2>Registrar coleta</h2>
+
+                <form id="collection-form" class="form-card">
+                    <div class="form-group">
+                        <label for="collection-neighborhood">Bairro</label>
+                        <input type="text" id="collection-neighborhood"
+                            placeholder="Nome do bairro" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="collection-date">Data da coleta</label>
+                        <input type="date" id="collection-date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="collection-material">Material recolhido</label>
+                        <select id="collection-material" required>
+                            <option value="">Selecione o material</option>
+                            <option>Papel e papelão</option>
+                            <option>Plástico</option>
+                            <option>Metal</option>
+                            <option>Vidro</option>
+                            <option>Materiais mistos</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="collection-weight">Peso coletado (kg)</label>
+                        <input type="number" id="collection-weight"
+                            min="0.1" step="0.1" placeholder="Ex.: 120" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="collection-team">Equipe responsável</label>
+                        <input type="text" id="collection-team"
+                            placeholder="Nome da equipe" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="collection-notes">Observações (opcional)</label>
+                        <textarea id="collection-notes" rows="3"
+                            placeholder="Informações adicionais sobre a coleta."></textarea>
+                    </div>
+
+                    <button type="submit" class="primary-button">
+                        Registrar coleta
+                    </button>
+                </form>
+            </section>
+
+            <section class="collection-history-section">
+                <h2>Histórico de coletas</h2>
+
+                <div class="management-filters">
+                    <div class="form-group">
+                        <label for="collection-search">Buscar bairro</label>
+                        <input type="search" id="collection-search"
+                            placeholder="Digite o nome do bairro">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="collection-filter-material">Material</label>
+                        <select id="collection-filter-material">
+                            <option value="todos">Todos os materiais</option>
+                            <option value="Papel e papelão">Papel e papelão</option>
+                            <option value="Plástico">Plástico</option>
+                            <option value="Metal">Metal</option>
+                            <option value="Vidro">Vidro</option>
+                            <option value="Materiais mistos">Materiais mistos</option>
+                        </select>
+                    </div>
+                </div>
+
+                <p id="collection-empty" class="empty-message" hidden>
+                    Nenhuma coleta encontrada.
+                </p>
+
+                <div id="collection-list" class="collection-list">
+                    <article class="collection-card" data-material="Papel e papelão">
+                        <div>
+                            <h3>Centro</h3>
+                            <p><strong>Data:</strong> 20/11/2026</p>
+                            <p><strong>Material:</strong> Papel e papelão</p>
+                            <p><strong>Peso:</strong> 120 kg</p>
+                            <p><strong>Equipe:</strong> Equipe 01</p>
+                        </div>
+                        <span class="collection-status">Concluída</span>
+                    </article>
+
+                    <article class="collection-card" data-material="Plástico">
+                        <div>
+                            <h3>Fátima</h3>
+                            <p><strong>Data:</strong> 18/11/2026</p>
+                            <p><strong>Material:</strong> Plástico</p>
+                            <p><strong>Peso:</strong> 85 kg</p>
+                            <p><strong>Equipe:</strong> Equipe 02</p>
+                        </div>
+                        <span class="collection-status">Concluída</span>
+                    </article>
+
+                    <article class="collection-card" data-material="Metal">
+                        <div>
+                            <h3>Santo Antônio</h3>
+                            <p><strong>Data:</strong> 15/11/2026</p>
+                            <p><strong>Material:</strong> Metal</p>
+                            <p><strong>Peso:</strong> 60 kg</p>
+                            <p><strong>Equipe:</strong> Equipe 01</p>
+                        </div>
+                        <span class="collection-status">Concluída</span>
+                    </article>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Coleta Seletiva de Viçosa - <span data-current-year></span></p>
+    </footer>
+</body>
+</html>

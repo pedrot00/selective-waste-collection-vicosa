@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início | Comerciante - Coleta Seletiva</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/acessibilidade.js" defer></script>
+    <script src="../../js/app.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="../../index.html" class="logo">
+            <span aria-hidden="true">♻</span>
+            Coleta Seletiva
+        </a>
+
+        <button type="button" id="accessibility-button"
+            class="accessibility-button"
+            aria-expanded="false"
+            aria-controls="accessibility-panel">
+            <span aria-hidden="true">♿</span>
+            Acessibilidade
+        </button>
+    </header>
+
+    <aside id="accessibility-panel"
+        class="accessibility-panel"
+        aria-label="Configurações de acessibilidade"
+        hidden>
+
+        <button type="button" id="close-accessibility"
+            class="close-accessibility"
+            aria-label="Fechar acessibilidade">×</button>
+
+        <h2>Acessibilidade</h2>
+        <p class="accessibility-description">
+            Escolha os recursos que deseja utilizar para facilitar sua navegação.
+        </p>
+
+        <div class="accessibility-option">
+            <label for="font-toggle">
+                <input type="checkbox" id="font-toggle">
+                Aumentar fonte
+            </label>
+            <p>Amplia os textos de todas as áreas da plataforma.</p>
+        </div>
+
+        <div class="accessibility-option">
+            <label for="color-toggle">
+                <input type="checkbox" id="color-toggle">
+                Modo para daltonismo
+            </label>
+            <p>Utiliza uma paleta alternativa para facilitar a diferenciação visual.</p>
+        </div>
+
+        <div class="accessibility-option">
+            <label for="reader-toggle">
+                <input type="checkbox" id="reader-toggle">
+                Leitura em voz alta
+            </label>
+            <p>Permite ouvir o conteúdo ao selecionar textos da página.</p>
+        </div>
+    </aside>
+
+    <main class="main-container">
+        <section class="dashboard-section">
+            <div class="dashboard-heading">
+                <div>
+                    <span class="section-tag">ÁREA DO COMERCIANTE</span>
+                    <h1>Bem-vindo!</h1>
+                    <p>Gerencie as coletas e os descartes do seu estabelecimento.</p>
+                </div>
+            </div>
+
+            <section class="dashboard-highlight">
+                
+                <div>
+                    <span class="highlight-icon" aria-hidden="true">🚛</span>
+                    <h2>Solicitar coleta extraordinária</h2>
+                    <p>
+                        Solicite uma coleta adicional quando seu estabelecimento
+                        tiver um volume maior de materiais recicláveis.
+                    </p>
+                    <a href="coleta-extra.html"
+                        class="primary-button dashboard-link">
+                        Solicitar coleta
+                    </a>
+                </div>
+            </section>
+
+            <h2 class="dashboard-subtitle">Outros serviços</h2>
+
+            <div class="dashboard-grid">
+                <a href="../morador/calendario.html" class="dashboard-card">
+                    <span class="dashboard-card-icon" aria-hidden="true">📅</span>
+                    <span class="dashboard-card-title">Calendário de coleta</span>
+                    <span class="dashboard-card-description">
+                        Consulte os dias e horários previstos para a coleta seletiva
+                        no seu bairro.
+                    </span>
+                </a>
+                <a href="agendamento.html" class="dashboard-card">
+                    <span class="dashboard-card-icon" aria-hidden="true">🗓️</span>
+                    <span class="dashboard-card-title">Agendamento de coleta</span>
+                    <span class="dashboard-card-description">
+                        Planeje uma coleta considerando o volume de materiais
+                        e a disponibilidade de horários.
+                    </span>
+                </a>
+
+                <a href="pevs.html" class="dashboard-card">
+                    <span class="dashboard-card-icon" aria-hidden="true">📍</span>
+                    <span class="dashboard-card-title">Pontos de Entrega Voluntária</span>
+                    <span class="dashboard-card-description">
+                        Localize os PEVs próximos e consulte informações
+                        sobre capacidade e funcionamento.
+                    </span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Coleta Seletiva de Viçosa - <span data-current-year></span></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Coleta Seletiva</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/acessibilidade.js" defer></script>
+    <script src="../../js/app.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="../../index.html" class="logo">
+            <span aria-hidden="true">♻</span>
+            Coleta Seletiva
+        </a>
+
+        <button
+            type="button"
+            id="accessibility-button"
+            class="accessibility-button"
+            aria-expanded="false"
+            aria-controls="accessibility-panel"
+        >
+            <span aria-hidden="true">♿</span>
+            Acessibilidade
+        </button>
+    </header>
+
+    <aside
+        id="accessibility-panel"
+        class="accessibility-panel"
+        aria-label="Configurações de acessibilidade"
+        hidden
+    >
+        <button
+            type="button"
+            id="close-accessibility"
+            class="close-accessibility"
+            aria-label="Fechar acessibilidade"
+        >
+            ×
+        </button>
+
+        <h2>Acessibilidade</h2>
+        <p class="accessibility-description">
+            Escolha os recursos que deseja utilizar para facilitar sua navegação.
+        </p>
+
+        <div class="accessibility-option">
+            <label for="font-toggle">
+                <input type="checkbox" id="font-toggle">
+                Aumentar fonte
+            </label>
+            <p>Amplia os textos de todas as áreas da plataforma.</p>
+        </div>
+
+        <div class="accessibility-option">
+            <label for="color-toggle">
+                <input type="checkbox" id="color-toggle">
+                Modo para daltonismo
+            </label>
+            <p>Utiliza uma paleta alternativa para facilitar a diferenciação visual.</p>
+        </div>
+
+        <div class="accessibility-option">
+            <label for="reader-toggle">
+                <input type="checkbox" id="reader-toggle">
+                Leitura em voz alta
+            </label>
+            <p>Permite ouvir o conteúdo ao selecionar textos da página.</p>
+        </div>
+    </aside>
+
+    <main class="main-container">
+        <section class="login-section">
+            <button
+                type="button"
+                class="back-button"
+                data-back
+                data-back-url="../../index.html"
+            >
+                ← Voltar
+            </button>
+
+            <div class="login-card">
+                <div class="login-heading">
+                    <span class="login-icon" aria-hidden="true">♻️</span>
+                    <h1>Bem-vindo!</h1>
+                    <p>Entre com seus dados para acessar a plataforma.</p>
+                </div>
+
+                <form id="login-form" class="login-form">
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Digite seu e-mail"
+                            autocomplete="username"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Digite sua senha"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="primary-button">
+                        Entrar
+                    </button>
+                </form>
+
+                <p class="login-register">
+                    Ainda não possui cadastro?
+                    <a href="cadastro.html">Cadastre-se</a>
+                </p>
+
+                <p class="demo-message">
+                    Acesso de demonstração: utilize qualquer e-mail e senha.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Coleta Seletiva de Viçosa - <span data-current-year></span></p>
+    </footer>
+</body>
+</html>

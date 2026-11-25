@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início | Morador - Coleta Seletiva</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/acessibilidade.js" defer></script>
+    <script src="../../js/app.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="../../index.html" class="logo">
+            <span aria-hidden="true">♻</span>
+            Coleta Seletiva
+        </a>
+
+        <button
+            type="button"
+            id="accessibility-button"
+            class="accessibility-button"
+            aria-expanded="false"
+            aria-controls="accessibility-panel"
+        >
+            <span aria-hidden="true">♿</span>
+            Acessibilidade
+        </button>
+    </header>
+
+    <aside
+        id="accessibility-panel"
+        class="accessibility-panel"
+        aria-label="Configurações de acessibilidade"
+        hidden
+    >
+        <button type="button" id="close-accessibility"
+            class="close-accessibility" aria-label="Fechar acessibilidade">×</button>
+
+        <h2>Acessibilidade</h2>
+        <p class="accessibility-description">
+            Escolha os recursos que deseja utilizar para facilitar sua navegação.
+        </p>
+
+        <div class="accessibility-option">
+            <label for="font-toggle">
+                <input type="checkbox" id="font-toggle">
+                Aumentar fonte
+            </label>
+            <p>Amplia os textos de todas as áreas da plataforma.</p>
+        </div>
+
+        <div class="accessibility-option">
+            <label for="color-toggle">
+                <input type="checkbox" id="color-toggle">
+                Modo para daltonismo
+            </label>
+            <p>Utiliza uma paleta alternativa para facilitar a diferenciação visual.</p>
+        </div>
+
+        <div class="accessibility-option">
+            <label for="reader-toggle">
+                <input type="checkbox" id="reader-toggle">
+                Leitura em voz alta
+            </label>
+            <p>Permite ouvir o conteúdo ao selecionar textos da página.</p>
+        </div>
+    </aside>
+
+    <main class="main-container">
+        <section class="dashboard-section">
+            <div class="dashboard-heading">
+                <div>
+                    <span class="section-tag">ÁREA DO MORADOR</span>
+                    <h1>Olá! Seja bem-vindo.</h1>
+                    <p>O que você deseja fazer hoje?</p>
+                </div>
+            </div>
+
+            <section class="dashboard-highlight">
+                <div>
+                    <span class="highlight-icon" aria-hidden="true">📅</span>
+                    <h2>Calendário de coleta</h2>
+                    <p>
+                        Consulte os dias e horários em que a coleta seletiva
+                        acontece no seu bairro.
+                    </p>
+                    <a href="calendario.html" class="primary-button dashboard-link">
+                        Consultar calendário
+                    </a>
+                </div>
+            </section>
+
+            <h2 class="dashboard-subtitle">Outros serviços</h2>
+
+            <div class="dashboard-grid">
+                <a href="avisos.html" class="dashboard-card">
+                    <span class="dashboard-card-icon" aria-hidden="true">🔔</span>
+                    <span class="dashboard-card-title">Avisos e notificações</span>
+                    <span class="dashboard-card-description">
+                        Veja comunicados e alertas sobre a coleta no seu bairro.
+                    </span>
+                </a>
+
+                <a href="catalogo.html" class="dashboard-card">
+                    <span class="dashboard-card-icon" aria-hidden="true">♻️</span>
+                    <span class="dashboard-card-title">Catálogo de recicláveis</span>
+                    <span class="dashboard-card-description">
+                        Descubra quais materiais podem ser reciclados e como prepará-los.
+                    </span>
+                </a>
+
+                <a href="duvidas.html" class="dashboard-card">
+                    <span class="dashboard-card-icon" aria-hidden="true">💬</span>
+                    <span class="dashboard-card-title">Tire suas dúvidas</span>
+                    <span class="dashboard-card-description">
+                        Envie uma foto ou pergunta para identificar um material.
+                    </span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Coleta Seletiva de Viçosa - <span data-current-year></span></p>
+    </footer>
+</body>
+</html>

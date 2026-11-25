@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avisos e notificações | Coleta Seletiva</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/acessibilidade.js" defer></script>
+    <script src="../../js/app.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="../../index.html" class="logo">
+            <span aria-hidden="true">♻</span>
+            Coleta Seletiva
+        </a>
+        <button type="button" id="accessibility-button"
+            class="accessibility-button" aria-expanded="false"
+            aria-controls="accessibility-panel">
+            <span aria-hidden="true">♿</span>
+            Acessibilidade
+        </button>
+    </header>
+
+    <aside id="accessibility-panel" class="accessibility-panel"
+        aria-label="Configurações de acessibilidade" hidden>
+        <button type="button" id="close-accessibility"
+            class="close-accessibility" aria-label="Fechar acessibilidade">×</button>
+        <h2>Acessibilidade</h2>
+        <p class="accessibility-description">
+            Escolha os recursos que deseja utilizar para facilitar sua navegação.
+        </p>
+        <div class="accessibility-option">
+            <label for="font-toggle"><input type="checkbox" id="font-toggle"> Aumentar fonte</label>
+            <p>Amplia os textos de todas as áreas da plataforma.</p>
+        </div>
+        <div class="accessibility-option">
+            <label for="color-toggle"><input type="checkbox" id="color-toggle"> Modo para daltonismo</label>
+            <p>Utiliza uma paleta alternativa para facilitar a diferenciação visual.</p>
+        </div>
+        <div class="accessibility-option">
+            <label for="reader-toggle"><input type="checkbox" id="reader-toggle"> Leitura em voz alta</label>
+            <p>Permite ouvir o conteúdo ao selecionar textos da página.</p>
+        </div>
+    </aside>
+
+    <main class="main-container">
+        <section class="notices-section">
+            <button type="button" class="back-button" data-back
+                data-back-url="inicio.html">← Voltar</button>
+
+            <div class="page-heading">
+                <span class="section-tag">ÁREA DO MORADOR</span>
+                <h1>Avisos e notificações</h1>
+                <p>Fique por dentro das informações sobre a coleta seletiva.</p>
+            </div>
+
+            <section class="notification-settings">
+                <div>
+                    <h2>Receber notificações</h2>
+                    <p>Ative os avisos para acompanhar as atualizações da coleta.</p>
+                </div>
+
+                <label class="switch-option" for="notifications-toggle">
+                    <input type="checkbox" id="notifications-toggle" checked>
+                    <span>Notificações ativadas</span>
+                </label>
+            </section>
+
+            <section class="notices-list-section">
+                <div class="notices-list-heading">
+                    <h2>Comunicados recentes</h2>
+                    <span class="notice-count">3 avisos</span>
+                </div>
+
+                <div class="notices-list">
+                    <article class="notice-card notice-important">
+                        <div class="notice-card-heading">
+                            <span class="notice-type">Atenção</span>
+                            <time datetime="2026-11-23">23/11/2026</time>
+                        </div>
+                        <h3>Alteração no horário da coleta</h3>
+                        <p>
+                            A coleta seletiva do bairro Centro poderá ocorrer
+                            em horário diferente nesta semana. Fique atento
+                            aos próximos comunicados.
+                        </p>
+                    </article>
+
+                    <article class="notice-card">
+                        <div class="notice-card-heading">
+                            <span class="notice-type">Comunicado</span>
+                            <time datetime="2026-11-20">20/11/2026</time>
+                        </div>
+                        <h3>Prepare corretamente seus recicláveis</h3>
+                        <p>
+                            Lembre-se de separar os materiais recicláveis,
+                            retirar resíduos de alimentos e, quando possível,
+                            encaminhá-los limpos e secos.
+                        </p>
+                    </article>
+
+                    <article class="notice-card">
+                        <div class="notice-card-heading">
+                            <span class="notice-type">Informação</span>
+                            <time datetime="2026-11-18">18/11/2026</time>
+                        </div>
+                        <h3>Conheça os materiais recicláveis</h3>
+                        <p>
+                            Consulte o catálogo da plataforma para descobrir
+                            quais materiais são aceitos e como prepará-los
+                            para a coleta.
+                        </p>
+                        <a href="catalogo.html" class="secondary-link">
+                            Acessar catálogo →
+                        </a>
+                    </article>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Coleta Seletiva de Viçosa - <span data-current-year></span></p>
+    </footer>
+</body>
+</html>

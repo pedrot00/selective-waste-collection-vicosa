@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitações de Coleta | Associação</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/acessibilidade.js" defer></script>
+    <script src="../../js/app.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="inicio.html" class="logo">
+            <span aria-hidden="true">♻</span>
+            Coleta Seletiva
+        </a>
+        <button type="button" id="accessibility-button"
+            class="accessibility-button"
+            aria-expanded="false" aria-controls="accessibility-panel">
+            <span aria-hidden="true">♿</span> Acessibilidade
+        </button>
+    </header>
+
+    <aside id="accessibility-panel" class="accessibility-panel" hidden>
+        <button type="button" id="close-accessibility"
+            class="close-accessibility" aria-label="Fechar acessibilidade">×</button>
+        <h2>Acessibilidade</h2>
+        <p class="accessibility-description">
+            Escolha os recursos que deseja utilizar para facilitar sua navegação.
+        </p>
+        <div class="accessibility-option">
+            <label for="font-toggle">
+                <input type="checkbox" id="font-toggle"> Aumentar fonte
+            </label>
+            <p>Amplia os textos de todas as áreas da plataforma.</p>
+        </div>
+        <div class="accessibility-option">
+            <label for="color-toggle">
+                <input type="checkbox" id="color-toggle"> Modo para daltonismo
+            </label>
+            <p>Utiliza uma paleta alternativa para facilitar a diferenciação visual.</p>
+        </div>
+        <div class="accessibility-option">
+            <label for="reader-toggle">
+                <input type="checkbox" id="reader-toggle"> Leitura em voz alta
+            </label>
+            <p>Permite ouvir o conteúdo ao selecionar textos da página.</p>
+        </div>
+    </aside>
+
+    <main class="main-container">
+        <button type="button" class="back-button"
+            data-back data-back-url="inicio.html">
+            ← Voltar
+        </button>
+
+        <section class="management-section">
+            <div class="page-heading">
+                <h1>Solicitações de coleta</h1>
+                <p>
+                    Analise os pedidos enviados pelos comerciantes e atualize
+                    o andamento de cada solicitação.
+                </p>
+            </div>
+
+            <div class="management-filters">
+                <div class="form-group">
+                    <label for="request-search">Buscar estabelecimento</label>
+                    <input type="search" id="request-search"
+                        placeholder="Digite o nome do estabelecimento">
+                </div>
+
+                <div class="form-group">
+                    <label for="request-status-filter">Filtrar por situação</label>
+                    <select id="request-status-filter">
+                        <option value="todos">Todas as situações</option>
+                        <option value="pendente">Aguardando análise</option>
+                        <option value="aprovada">Aprovada</option>
+                        <option value="concluida">Concluída</option>
+                        <option value="recusada">Recusada</option>
+                    </select>
+                </div>
+            </div>
+
+            <p id="request-empty" class="empty-message" hidden>
+                Nenhuma solicitação encontrada.
+            </p>
+
+            <div class="request-list">
+                <article class="request-card" data-status="pendente">
+                    <div class="request-card-header">
+                        <div>
+                            <span class="request-type">Coleta extraordinária</span>
+                            <h2>Mercado Central</h2>
+                        </div>
+                        <span class="request-status pending">Aguardando análise</span>
+                    </div>
+
+                    <div class="request-details">
+                        <p><strong>Material:</strong> Papel e papelão</p>
+                        <p><strong>Volume:</strong> Mais de 20 fardos</p>
+                        <p><strong>Endereço:</strong> Centro, Viçosa - MG</p>
+                        <p><strong>Data do pedido:</strong> 23/11/2026</p>
+                    </div>
+
+                    <div class="request-actions">
+                        <button type="button" class="request-detail-button"
+                            data-request-details="Mercado Central|Coleta extraordinária|Papel e papelão|Mais de 20 fardos|Centro, Viçosa - MG|23/11/2026">
+                            Ver detalhes
+                        </button>
+                        <button type="button" class="request-approve-button"
+                            data-request-action="aprovada">
+                            Aprovar
+                        </button>
+                        <button type="button" class="request-reject-button"
+                            data-request-action="recusada">
+                            Recusar
+                        </button>
+                    </div>
+                </article>
+
+                <article class="request-card" data-status="pendente">
+                    <div class="request-card-header">
+                        <div>
+                            <span class="request-type">Agendamento programado</span>
+                            <h2>Comercial São João</h2>
+                        </div>
+                        <span class="request-status pending">Aguardando análise</span>
+                    </div>
+
+                    <div class="request-details">
+                        <p><strong>Material:</strong> Plásticos</p>
+                        <p><strong>Quantidade:</strong> 15 fardos</p>
+                        <p><strong>Volume:</strong> 2,5 m³</p>
+                        <p><strong>Peso:</strong> 180 kg</p>
+                        <p><strong>Endereço:</strong> Bairro de Fátima, Viçosa - MG</p>
+                        <p><strong>Data desejada:</strong> 27/11/2026</p>
+                        <p><strong>Período:</strong> Manhã</p>
+                    </div>
+
+                    <div class="request-actions">
+                        <button type="button" class="request-detail-button"
+                            data-request-details="Comercial São João|Agendamento programado|Plásticos|15 fardos|2,5 m³|180 kg|Bairro de Fátima, Viçosa - MG|27/11/2026|Manhã">
+                            Ver detalhes
+                        </button>
+                        <button type="button" class="request-approve-button"
+                            data-request-action="aprovada">
+                            Aprovar
+                        </button>
+                        <button type="button" class="request-reject-button"
+                            data-request-action="recusada">
+                            Recusar
+                        </button>
+                    </div>
+                </article>
+
+                <article class="request-card" data-status="aprovada">
+                    <div class="request-card-header">
+                        <div>
+                            <span class="request-type">Coleta extraordinária</span>
+                            <h2>Mercearia do Bairro</h2>
+                        </div>
+                        <span class="request-status approved">Aprovada</span>
+                    </div>
+
+                    <div class="request-details">
+                        <p><strong>Material:</strong> Papelão</p>
+                        <p><strong>Volume:</strong> 10 fardos</p>
+                        <p><strong>Endereço:</strong> Santo Antônio, Viçosa - MG</p>
+                        <p><strong>Data do pedido:</strong> 21/11/2026</p>
+                    </div>
+
+                    <div class="request-actions">
+                        <button type="button" class="request-detail-button"
+                            data-request-details="Mercearia do Bairro|Coleta extraordinária|Papelão|10 fardos|Santo Antônio, Viçosa - MG|21/11/2026">
+                            Ver detalhes
+                        </button>
+                        <button type="button" class="request-complete-button"
+                            data-request-action="concluida">
+                            Marcar como concluída
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+            <section id="request-detail-panel" class="request-detail-panel"
+                aria-live="polite" hidden>
+                <h2>Detalhes da solicitação</h2>
+                <div id="request-detail-content"></div>
+                <button type="button" id="close-request-details"
+                    class="outline-button">
+                    Fechar detalhes
+                </button>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Coleta Seletiva de Viçosa - <span data-current-year></span></p>
+    </footer>
+</body>
+</html>

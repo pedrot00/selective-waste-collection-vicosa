@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pontos de Entrega Voluntária | Coleta Seletiva</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/acessibilidade.js" defer></script>
+    <script src="../../js/app.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="inicio.html" class="logo">
+            <span aria-hidden="true">♻</span>
+            Coleta Seletiva
+        </a>
+        <button type="button" id="accessibility-button"
+            class="accessibility-button"
+            aria-expanded="false" aria-controls="accessibility-panel">
+            <span aria-hidden="true">♿</span> Acessibilidade
+        </button>
+    </header>
+
+    <aside id="accessibility-panel" class="accessibility-panel" hidden>
+        <button type="button" id="close-accessibility"
+            class="close-accessibility" aria-label="Fechar acessibilidade">×</button>
+        <h2>Acessibilidade</h2>
+        <p class="accessibility-description">
+            Escolha os recursos que deseja utilizar para facilitar sua navegação.
+        </p>
+        <div class="accessibility-option">
+            <label for="font-toggle">
+                <input type="checkbox" id="font-toggle"> Aumentar fonte
+            </label>
+            <p>Amplia os textos de todas as áreas da plataforma.</p>
+        </div>
+        <div class="accessibility-option">
+            <label for="color-toggle">
+                <input type="checkbox" id="color-toggle"> Modo para daltonismo
+            </label>
+            <p>Utiliza uma paleta alternativa para facilitar a diferenciação visual.</p>
+        </div>
+        <div class="accessibility-option">
+            <label for="reader-toggle">
+                <input type="checkbox" id="reader-toggle"> Leitura em voz alta
+            </label>
+            <p>Permite ouvir o conteúdo ao selecionar textos da página.</p>
+        </div>
+    </aside>
+
+    <main class="main-container">
+        <button type="button" class="back-button"
+            data-back data-back-url="inicio.html">
+            ← Voltar
+        </button>
+
+        <section class="form-section">
+            <div class="page-heading">
+                <h1>Pontos de Entrega Voluntária</h1>
+                <p>
+                    Consulte os pontos disponíveis para entregar seus materiais
+                    recicláveis e confirme o descarte utilizando o código do local.
+                </p>
+            </div>
+
+            <section class="pev-list-section">
+                <h2>PEVs disponíveis em Viçosa</h2>
+
+                <div class="pev-grid">
+                    <article class="pev-card">
+                        <div class="pev-card-heading">
+                            <span class="pev-icon" aria-hidden="true">📍</span>
+                            <span class="pev-status available">Disponível</span>
+                        </div>
+                        <h3>PEV - Centro</h3>
+                        <p>Praça Silviano Brandão, Centro</p>
+                        <p><strong>Funcionamento:</strong> 8h às 18h</p>
+                        <p><strong>Capacidade:</strong> Disponível</p>
+                        <p><strong>Último esvaziamento:</strong> 20/11/2026</p>
+                        <button type="button" class="select-pev-button"
+                            data-pev="PEV - Centro">
+                            Selecionar este PEV
+                        </button>
+                    </article>
+
+                    <article class="pev-card">
+                        <div class="pev-card-heading">
+                            <span class="pev-icon" aria-hidden="true">📍</span>
+                            <span class="pev-status available">Disponível</span>
+                        </div>
+                        <h3>PEV - Fátima</h3>
+                        <p>Av. Santa Rita, Bairro de Fátima</p>
+                        <p><strong>Funcionamento:</strong> 7h às 17h</p>
+                        <p><strong>Capacidade:</strong> Disponível</p>
+                        <p><strong>Último esvaziamento:</strong> 21/11/2026</p>
+                        <button type="button" class="select-pev-button"
+                            data-pev="PEV - Fátima">
+                            Selecionar este PEV
+                        </button>
+                    </article>
+
+                    <article class="pev-card">
+                        <div class="pev-card-heading">
+                            <span class="pev-icon" aria-hidden="true">📍</span>
+                            <span class="pev-status unavailable">Indisponível</span>
+                        </div>
+                        <h3>PEV - Santo Antônio</h3>
+                        <p>Rua dos Passos, Santo Antônio</p>
+                        <p><strong>Funcionamento:</strong> 8h às 17h</p>
+                        <p><strong>Capacidade:</strong> Temporariamente esgotada</p>
+                        <p><strong>Último esvaziamento:</strong> 18/11/2026</p>
+                        <button type="button" class="select-pev-button"
+                            data-pev="PEV - Santo Antônio" disabled>
+                            Indisponível
+                        </button>
+                    </article>
+                </div>
+            </section>
+
+            <section class="pev-confirmation-section">
+                <h2>Confirmar entrega de materiais</h2>
+                <p>
+                    Após depositar os materiais no PEV, informe o código
+                    temporário de quatro dígitos disponibilizado no local.
+                </p>
+
+                <form id="pev-form" class="form-card">
+                    <div class="form-group">
+                        <label for="selected-pev">PEV selecionado</label>
+                        <input type="text" id="selected-pev"
+                            placeholder="Selecione um PEV acima"
+                            readonly required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pev-code">Código temporário</label>
+                        <input type="text" id="pev-code"
+                            placeholder="Digite os 4 dígitos"
+                            inputmode="numeric" pattern="[0-9]{4}"
+                            maxlength="4" required>
+                    </div>
+
+                    <button type="submit" class="primary-button">
+                        Confirmar descarte
+                    </button>
+                </form>
+
+                <div id="pev-result" class="success-alert"
+                    role="status" aria-live="polite" hidden>
+                    <span class="success-alert-icon" aria-hidden="true">✓</span>
+                    <div>
+                        <strong>Descarte confirmado!</strong>
+                        <p>A confirmação foi registrada no protótipo.</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Coleta Seletiva de Viçosa - <span data-current-year></span></p>
+    </footer>
+</body>
+</html>

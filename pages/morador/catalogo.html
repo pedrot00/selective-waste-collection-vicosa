@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de recicláveis | Coleta Seletiva</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/acessibilidade.js" defer></script>
+    <script src="../../js/app.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="../../index.html" class="logo">
+            <span aria-hidden="true">♻</span>
+            Coleta Seletiva
+        </a>
+        <button type="button" id="accessibility-button"
+            class="accessibility-button" aria-expanded="false"
+            aria-controls="accessibility-panel">
+            <span aria-hidden="true">♿</span>
+            Acessibilidade
+        </button>
+    </header>
+
+    <aside id="accessibility-panel" class="accessibility-panel"
+        aria-label="Configurações de acessibilidade" hidden>
+        <button type="button" id="close-accessibility"
+            class="close-accessibility" aria-label="Fechar acessibilidade">×</button>
+        <h2>Acessibilidade</h2>
+        <p class="accessibility-description">
+            Escolha os recursos que deseja utilizar para facilitar sua navegação.
+        </p>
+        <div class="accessibility-option">
+            <label for="font-toggle"><input type="checkbox" id="font-toggle"> Aumentar fonte</label>
+            <p>Amplia os textos de todas as áreas da plataforma.</p>
+        </div>
+        <div class="accessibility-option">
+            <label for="color-toggle"><input type="checkbox" id="color-toggle"> Modo para daltonismo</label>
+            <p>Utiliza uma paleta alternativa para facilitar a diferenciação visual.</p>
+        </div>
+        <div class="accessibility-option">
+            <label for="reader-toggle"><input type="checkbox" id="reader-toggle"> Leitura em voz alta</label>
+            <p>Permite ouvir o conteúdo ao selecionar textos da página.</p>
+        </div>
+    </aside>
+
+    <main class="main-container">
+        <section class="catalog-section">
+            <button type="button" class="back-button" data-back
+                data-back-url="inicio.html">← Voltar</button>
+
+            <div class="page-heading">
+                <span class="section-tag">ÁREA DO MORADOR</span>
+                <h1>Catálogo de recicláveis</h1>
+                <p>
+                    Descubra quais materiais podem ser reciclados e como prepará-los
+                    antes de encaminhá-los à coleta seletiva.
+                </p>
+            </div>
+
+            <section class="catalog-search">
+                <label for="material-search">Pesquisar material</label>
+                <input
+                    type="search"
+                    id="material-search"
+                    placeholder="Ex.: garrafa PET, papelão, lata..."
+                    autocomplete="off"
+                >
+
+                <label for="material-category">Filtrar por categoria</label>
+                <select id="material-category">
+                    <option value="todos">Todas as categorias</option>
+                    <option value="papel">Papel</option>
+                    <option value="plastico">Plástico</option>
+                    <option value="metal">Metal</option>
+                    <option value="vidro">Vidro</option>
+                    <option value="nao-reciclavel">Não recicláveis</option>
+                </select>
+            </section>
+
+            <section class="catalog-results">
+                <h2>Materiais disponíveis</h2>
+
+                <div class="material-grid" id="material-grid">
+                    <article class="material-card" data-category="papel">
+                        <span class="material-icon" aria-hidden="true">📦</span>
+                        <h3>Papelão</h3>
+                        <span class="material-status accepted">Aceito</span>
+                        <p>
+                            Caixas e embalagens de papelão podem ser encaminhadas
+                            para reciclagem.
+                        </p>
+                        <div class="material-preparation">
+                            <strong>Como preparar:</strong>
+                            <p>Retire fitas adesivas, restos de alimentos e mantenha seco.</p>
+                        </div>
+                    </article>
+
+                    <article class="material-card" data-category="papel">
+                        <span class="material-icon" aria-hidden="true">📰</span>
+                        <h3>Jornais e revistas</h3>
+                        <span class="material-status accepted">Aceito</span>
+                        <p>
+                            Jornais, revistas e folhas de papel podem ser reciclados.
+                        </p>
+                        <div class="material-preparation">
+                            <strong>Como preparar:</strong>
+                            <p>Organize em pilhas e evite materiais molhados ou engordurados.</p>
+                        </div>
+                    </article>
+
+                    <article class="material-card" data-category="plastico">
+                        <span class="material-icon" aria-hidden="true">🧴</span>
+                        <h3>Garrafas PET</h3>
+                        <span class="material-status accepted">Aceito</span>
+                        <p>
+                            Garrafas plásticas de bebidas e outros recipientes PET.
+                        </p>
+                        <div class="material-preparation">
+                            <strong>Como preparar:</strong>
+                            <p>Esvazie, retire resíduos e, se possível, amasse a garrafa.</p>
+                        </div>
+                    </article>
+
+                    <article class="material-card" data-category="plastico">
+                        <span class="material-icon" aria-hidden="true">🥡</span>
+                        <h3>Embalagens plásticas</h3>
+                        <span class="material-status accepted">Aceito</span>
+                        <p>
+                            Embalagens plásticas de produtos de limpeza e alimentos.
+                        </p>
+                        <div class="material-preparation">
+                            <strong>Como preparar:</strong>
+                            <p>Esvazie e retire restos de produtos e alimentos.</p>
+                        </div>
+                    </article>
+
+                    <article class="material-card" data-category="metal">
+                        <span class="material-icon" aria-hidden="true">🥫</span>
+                        <h3>Latas de alumínio</h3>
+                        <span class="material-status accepted">Aceito</span>
+                        <p>
+                            Latas de bebidas e outros recipientes de alumínio.
+                        </p>
+                        <div class="material-preparation">
+                            <strong>Como preparar:</strong>
+                            <p>Esvazie e retire resíduos. Tenha cuidado com bordas cortantes.</p>
+                        </div>
+                    </article>
+
+                    <article class="material-card" data-category="metal">
+                        <span class="material-icon" aria-hidden="true">🔩</span>
+                        <h3>Metais</h3>
+                        <span class="material-status accepted">Aceito</span>
+                        <p>
+                            Pequenos objetos e embalagens metálicas recicláveis.
+                        </p>
+                        <div class="material-preparation">
+                            <strong>Como preparar:</strong>
+                            <p>Separe de outros resíduos e evite peças contaminadas.</p>
+                        </div>
+                    </article>
+
+                    <article class="material-card" data-category="vidro">
+                        <span class="material-icon" aria-hidden="true">🍾</span>
+                        <h3>Garrafas de vidro</h3>
+                        <span class="material-status accepted">Aceito</span>
+                        <p>
+                            Garrafas e recipientes de vidro sem contaminação.
+                        </p>
+                        <div class="material-preparation">
+                            <strong>Como preparar:</strong>
+                            <p>Esvazie e acondicione com cuidado para evitar acidentes.</p>
+                        </div>
+                    </article>
+
+                    <article class="material-card" data-category="vidro">
+                        <span class="material-icon" aria-hidden="true">🫙</span>
+                        <h3>Potes de vidro</h3>
+                        <span class="material-status accepted">Aceito</span>
+                        <p>
+                            Potes e recipientes de vidro utilizados em alimentos.
+                        </p>
+                        <div class="material-preparation">
+                            <strong>Como preparar:</strong>
+                            <p>Retire restos de alimentos e mantenha os recipientes separados.</p>
+                        </div>
+                    </article>
+
+                    <article class="material-card" data-category="nao-reciclavel">
+                        <span class="material-icon" aria-hidden="true">🍕</span>
+                        <h3>Papel engordurado</h3>
+                        <span class="material-status not-accepted">Não aceito</span>
+                        <p>
+                            Papéis contaminados com óleo, gordura ou restos de alimentos.
+                        </p>
+                        <div class="material-preparation">
+                            <strong>Orientação:</strong>
+                            <p>Descarte junto aos resíduos comuns.</p>
+                        </div>
+                    </article>
+
+                    <article class="material-card" data-category="nao-reciclavel">
+                        <span class="material-icon" aria-hidden="true">🧻</span>
+                        <h3>Papel higiênico usado</h3>
+                        <span class="material-status not-accepted">Não aceito</span>
+                        <p>
+                            Papel higiênico usado e outros papéis sanitários contaminados.
+                        </p>
+                        <div class="material-preparation">
+                            <strong>Orientação:</strong>
+                            <p>Descarte junto aos resíduos comuns.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <p id="catalog-empty" class="catalog-empty" hidden>
+                    Nenhum material encontrado. Tente outra pesquisa ou categoria.
+                </p>
+            </section>
+
+            <section class="catalog-help">
+                <h2>Não encontrou o material?</h2>
+                <p>
+                    Envie uma foto ou descreva o material para obter ajuda.
+                </p>
+                <a href="duvidas.html" class="primary-button catalog-help-link">
+                    Tirar uma dúvida
+                </a>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Coleta Seletiva de Viçosa - <span data-current-year></span></p>
+    </footer>
+</body>
+</html>

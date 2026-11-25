@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário e Bairros | Associação</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/acessibilidade.js" defer></script>
+    <script src="../../js/app.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="inicio.html" class="logo">
+            <span aria-hidden="true">♻</span>
+            Coleta Seletiva
+        </a>
+        <button type="button" id="accessibility-button"
+            class="accessibility-button"
+            aria-expanded="false" aria-controls="accessibility-panel">
+            <span aria-hidden="true">♿</span> Acessibilidade
+        </button>
+    </header>
+
+    <aside id="accessibility-panel" class="accessibility-panel" hidden>
+        <button type="button" id="close-accessibility"
+            class="close-accessibility" aria-label="Fechar acessibilidade">×</button>
+        <h2>Acessibilidade</h2>
+        <p class="accessibility-description">
+            Escolha os recursos que deseja utilizar para facilitar sua navegação.
+        </p>
+        <div class="accessibility-option">
+            <label for="font-toggle">
+                <input type="checkbox" id="font-toggle"> Aumentar fonte
+            </label>
+            <p>Amplia os textos de todas as áreas da plataforma.</p>
+        </div>
+        <div class="accessibility-option">
+            <label for="color-toggle">
+                <input type="checkbox" id="color-toggle"> Modo para daltonismo
+            </label>
+            <p>Utiliza uma paleta alternativa para facilitar a diferenciação visual.</p>
+        </div>
+        <div class="accessibility-option">
+            <label for="reader-toggle">
+                <input type="checkbox" id="reader-toggle"> Leitura em voz alta
+            </label>
+            <p>Permite ouvir o conteúdo ao selecionar textos da página.</p>
+        </div>
+    </aside>
+
+    <main class="main-container">
+        <button type="button" class="back-button"
+            data-back data-back-url="inicio.html">
+            ← Voltar
+        </button>
+
+        <section class="management-section">
+            <div class="page-heading">
+                <h1>Calendário de coleta</h1>
+                <p>
+                    Cadastre bairros e organize os dias e horários
+                    da coleta seletiva em Viçosa.
+                </p>
+            </div>
+
+            <section class="calendar-management-card">
+                <h2>Cadastrar calendário</h2>
+
+                <form id="association-calendar-form" class="form-card">
+                    <div class="form-group">
+                        <label for="calendar-neighborhood">Bairro</label>
+                        <input type="text" id="calendar-neighborhood"
+                            placeholder="Nome do bairro" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calendar-weekday">Dia da coleta</label>
+                        <select id="calendar-weekday" required>
+                            <option value="">Selecione o dia</option>
+                            <option>Segunda-feira</option>
+                            <option>Terça-feira</option>
+                            <option>Quarta-feira</option>
+                            <option>Quinta-feira</option>
+                            <option>Sexta-feira</option>
+                            <option>Sábado</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calendar-time">Horário</label>
+                        <input type="time" id="calendar-time" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calendar-notes">Observações (opcional)</label>
+                        <textarea id="calendar-notes" rows="3"
+                            placeholder="Informações adicionais sobre a coleta."></textarea>
+                    </div>
+
+                    <button type="submit" class="primary-button">
+                        Cadastrar calendário
+                    </button>
+                </form>
+            </section>
+
+            <section class="calendar-management-list">
+                <h2>Bairros cadastrados</h2>
+
+                <div class="management-filters">
+                    <div class="form-group">
+                        <label for="calendar-search">Buscar bairro</label>
+                        <input type="search" id="calendar-search"
+                            placeholder="Digite o nome do bairro">
+                    </div>
+                </div>
+
+                <p id="calendar-empty" class="empty-message" hidden>
+                    Nenhum bairro encontrado.
+                </p>
+
+                <div id="registered-calendars" class="registered-calendars">
+                    <article class="registered-calendar">
+                        <div>
+                            <h3>Centro</h3>
+                            <p><strong>Dia:</strong> Segunda-feira</p>
+                            <p><strong>Horário:</strong> 08:00</p>
+                        </div>
+                        <div class="calendar-actions">
+                            <button type="button" class="edit-calendar-button">
+                                Alterar
+                            </button>
+                            <button type="button" class="remove-calendar-button">
+                                Remover
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="registered-calendar">
+                        <div>
+                            <h3>Fátima</h3>
+                            <p><strong>Dia:</strong> Quarta-feira</p>
+                            <p><strong>Horário:</strong> 09:00</p>
+                        </div>
+                        <div class="calendar-actions">
+                            <button type="button" class="edit-calendar-button">
+                                Alterar
+                            </button>
+                            <button type="button" class="remove-calendar-button">
+                                Remover
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="registered-calendar">
+                        <div>
+                            <h3>Santo Antônio</h3>
+                            <p><strong>Dia:</strong> Sexta-feira</p>
+                            <p><strong>Horário:</strong> 08:00</p>
+                        </div>
+                        <div class="calendar-actions">
+                            <button type="button" class="edit-calendar-button">
+                                Alterar
+                            </button>
+                            <button type="button" class="remove-calendar-button">
+                                Remover
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Coleta Seletiva de Viçosa - <span data-current-year></span></p>
+    </footer>
+</body>
+</html>

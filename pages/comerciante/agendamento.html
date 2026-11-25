@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Coleta | Coleta Seletiva</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/acessibilidade.js" defer></script>
+    <script src="../../js/app.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="inicio.html" class="logo">
+            <span aria-hidden="true">♻</span>
+            Coleta Seletiva
+        </a>
+        <button type="button" id="accessibility-button"
+            class="accessibility-button"
+            aria-expanded="false" aria-controls="accessibility-panel">
+            <span aria-hidden="true">♿</span> Acessibilidade
+        </button>
+    </header>
+
+    <aside id="accessibility-panel" class="accessibility-panel" hidden>
+        <button type="button" id="close-accessibility"
+            class="close-accessibility" aria-label="Fechar acessibilidade">×</button>
+        <h2>Acessibilidade</h2>
+        <p class="accessibility-description">
+            Escolha os recursos que deseja utilizar para facilitar sua navegação.
+        </p>
+        <div class="accessibility-option">
+            <label for="font-toggle">
+                <input type="checkbox" id="font-toggle"> Aumentar fonte
+            </label>
+            <p>Amplia os textos de todas as áreas da plataforma.</p>
+        </div>
+        <div class="accessibility-option">
+            <label for="color-toggle">
+                <input type="checkbox" id="color-toggle"> Modo para daltonismo
+            </label>
+            <p>Utiliza uma paleta alternativa para facilitar a diferenciação visual.</p>
+        </div>
+        <div class="accessibility-option">
+            <label for="reader-toggle">
+                <input type="checkbox" id="reader-toggle"> Leitura em voz alta
+            </label>
+            <p>Permite ouvir o conteúdo ao selecionar textos da página.</p>
+        </div>
+    </aside>
+
+    <main class="main-container">
+        <button type="button" class="back-button"
+            data-back data-back-url="inicio.html">
+            ← Voltar
+        </button>
+
+        <section class="form-section">
+            <div class="page-heading">
+                <h1>Agendamento de coleta</h1>
+                <p>
+                    Planeje a retirada dos materiais recicláveis do seu estabelecimento.
+                    Preencha as informações para solicitar uma data de coleta.
+                </p>
+            </div>
+
+            <div id="schedule-result" class="success-alert"
+                role="status" aria-live="polite" hidden>
+                <span class="success-alert-icon" aria-hidden="true">✓</span>
+                <div>
+                    <strong>Solicitação de agendamento registrada!</strong>
+                    <p>Seu pedido está aguardando análise e confirmação da associação.</p>
+                </div>
+            </div>
+
+            <form id="schedule-form" class="form-card">
+                <h2>1. Identificação do estabelecimento</h2>
+
+                <div class="form-group">
+                    <label for="business-name">Nome do estabelecimento</label>
+                    <input type="text" id="business-name"
+                        placeholder="Nome comercial" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="business-cnpj">CNPJ</label>
+                    <input type="text" id="business-cnpj"
+                        placeholder="00.000.000/0000-00"
+                        maxlength="18" data-uppercase required>
+                </div>
+
+                <div class="form-group">
+                    <label for="schedule-address">Endereço da coleta</label>
+                    <input type="text" id="schedule-address"
+                        placeholder="Rua, número e bairro" required>
+                </div>
+
+                <h2>2. Informações dos materiais</h2>
+
+                <div class="form-group">
+                    <label for="schedule-material">Tipo de material</label>
+                    <select id="schedule-material" required>
+                        <option value="">Selecione</option>
+                        <option value="papel">Papel e papelão</option>
+                        <option value="plastico">Plásticos</option>
+                        <option value="metal">Metais</option>
+                        <option value="vidro">Vidros</option>
+                        <option value="misto">Materiais misturados</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="schedule-quantity">Quantidade estimada (fardos)</label>
+                    <input type="number" id="schedule-quantity"
+                        min="1" placeholder="Ex.: 25" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="schedule-volume">Volume aproximado (m³)</label>
+                    <input type="number" id="schedule-volume"
+                        min="0.1" step="0.1" placeholder="Ex.: 3.5" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="schedule-weight">Peso aproximado (kg)</label>
+                    <input type="number" id="schedule-weight"
+                        min="1" placeholder="Ex.: 200" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="schedule-photo">Foto dos materiais (opcional)</label>
+                    <input type="file" id="schedule-photo" accept="image/*">
+                </div>
+
+                <h2>3. Preferência de coleta</h2>
+
+                <div class="form-group">
+                    <label for="schedule-date">Data desejada</label>
+                    <input type="date" id="schedule-date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="schedule-time">Período preferencial</label>
+                    <select id="schedule-time" required>
+                        <option value="">Selecione</option>
+                        <option value="manha">Manhã (8h às 12h)</option>
+                        <option value="tarde">Tarde (13h às 17h)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="schedule-observation">Observações (opcional)</label>
+                    <textarea id="schedule-observation" rows="3"
+                        placeholder="Informações adicionais sobre a coleta."></textarea>
+                </div>
+
+                <button type="submit" class="primary-button">
+                    Solicitar agendamento
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Coleta Seletiva de Viçosa - <span data-current-year></span></p>
+    </footer>
+</body>
+</html>

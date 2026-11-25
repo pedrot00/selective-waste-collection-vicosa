@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário de coleta | Coleta Seletiva</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/acessibilidade.js" defer></script>
+    <script src="../../js/app.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="../../index.html" class="logo">
+            <span aria-hidden="true">♻</span>
+            Coleta Seletiva
+        </a>
+        <button type="button" id="accessibility-button"
+            class="accessibility-button" aria-expanded="false"
+            aria-controls="accessibility-panel">
+            <span aria-hidden="true">♿</span>
+            Acessibilidade
+        </button>
+    </header>
+
+    <aside id="accessibility-panel" class="accessibility-panel"
+        aria-label="Configurações de acessibilidade" hidden>
+        <button type="button" id="close-accessibility"
+            class="close-accessibility" aria-label="Fechar acessibilidade">×</button>
+        <h2>Acessibilidade</h2>
+        <p class="accessibility-description">
+            Escolha os recursos que deseja utilizar para facilitar sua navegação.
+        </p>
+        <div class="accessibility-option">
+            <label for="font-toggle"><input type="checkbox" id="font-toggle"> Aumentar fonte</label>
+            <p>Amplia os textos de todas as áreas da plataforma.</p>
+        </div>
+        <div class="accessibility-option">
+            <label for="color-toggle"><input type="checkbox" id="color-toggle"> Modo para daltonismo</label>
+            <p>Utiliza uma paleta alternativa para facilitar a diferenciação visual.</p>
+        </div>
+        <div class="accessibility-option">
+            <label for="reader-toggle"><input type="checkbox" id="reader-toggle"> Leitura em voz alta</label>
+            <p>Permite ouvir o conteúdo ao selecionar textos da página.</p>
+        </div>
+    </aside>
+
+    <main class="main-container">
+        <section class="calendar-section">
+            <button type="button" class="back-button" data-back
+                data-back-url="inicio.html">← Voltar</button>
+
+            <div class="page-heading">
+                <span class="section-tag">ÁREA DO MORADOR / COMERCIANTE</span>
+                <h1>Calendário de coleta</h1>
+                <p>Consulte os dias de coleta seletiva na sua região.</p>
+            </div>
+
+            <section class="address-card">
+                <h2>Seu endereço</h2>
+                <p>Informe seu bairro para consultar os dias de coleta.</p>
+
+                <form id="calendar-form" class="calendar-form">
+                    <div class="form-group">
+                        <label for="neighborhood">Bairro</label>
+                        <select id="neighborhood" name="neighborhood" required>
+                            <option value="">Selecione seu bairro</option>
+                            <option value="Centro">Centro</option>
+                            <option value="Lourdes">Lourdes</option>
+                            <option value="Fátima">Fátima</option>
+                            <option value="Santa Clara">Santa Clara</option>
+                            <option value="Silvestre">Silvestre</option>
+                            <option value="Nova Viçosa">Nova Viçosa</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="primary-button">
+                        Consultar calendário
+                    </button>
+                </form>
+            </section>
+
+            <section id="calendar-result" class="calendar-result" hidden>
+                <div class="result-heading">
+                    <div>
+                        <span class="section-tag">PROGRAMAÇÃO</span>
+                        <h2 id="result-neighborhood">Calendário do bairro</h2>
+                    </div>
+                    <span class="schedule-status">Programação demonstrativa</span>
+                </div>
+
+                <div class="collection-schedule">
+                    <article class="schedule-item">
+                        <span class="schedule-icon" aria-hidden="true">📅</span>
+                        <div>
+                            <h3>Segunda-feira</h3>
+                            <p>Coleta de materiais recicláveis</p>
+                        </div>
+                    </article>
+
+                    <article class="schedule-item">
+                        <span class="schedule-icon" aria-hidden="true">⏰</span>
+                        <div>
+                            <h3>Horário previsto</h3>
+                            <p>Das 8h às 12h</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="calendar-notice">
+                    <strong>Orientação:</strong>
+                    <p>
+                        Deixe os materiais separados e acondicionados corretamente
+                        antes do horário previsto para a coleta.
+                    </p>
+                </div>
+            </section>
+
+            <section class="calendar-legend">
+                <h2>O que pode ser separado?</h2>
+                <div class="material-tags">
+                    <span>📄 Papel</span>
+                    <span>🍾 Vidro</span>
+                    <span>🥫 Metal</span>
+                    <span>🧴 Plástico</span>
+                </div>
+                <p>Consulte o catálogo para conferir as orientações de preparo.</p>
+                <a href="catalogo.html" class="secondary-link">
+                    Consultar catálogo de recicláveis →
+                </a>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Coleta Seletiva de Viçosa - <span data-current-year></span></p>
+    </footer>
+</body>
+</html>
