@@ -9,7 +9,8 @@ O **Coleta Seletiva — Viçosa** é um protótipo funcional desenvolvido para f
 > **Protótipo Front-end:** esta versão concentra-se na experiência do usuário, usabilidade e acessibilidade diretamente no navegador, utilizando armazenamento local (`localStorage`) para persistir preferências de interface e simular interações, agendamentos e registros em tempo real.
 
 ---
-Link para versão online: https://selective-waste-collection-vicosa.vercel.app/pages/morador/
+Link para versão online: https://selective-waste-collection-vicosa.vercel.app
+
 
 ## ⚙️ Funcionalidades por perfil
 
