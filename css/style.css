@@ -1,11 +1,10 @@
-
 :root {
     --primary: #174C37;
     --secondary: #267B50;
     --background: #E9F2EC;
     --surface: #FFFFFF;
     --text: #252D28;
-    --text-muted: #65736A;
+    --text-muted: #4F5E55;
     --border: #C8D5CC;
     --radius: 12px;
     --shadow: 0 4px 16px rgba(23, 76, 55, 0.08);
@@ -1855,5 +1854,267 @@ body.colorblind-mode .collection-status {
 @media (max-width: 600px) {
     .collection-card {
         flex-direction: column;
+    }
+}
+
+
+/* ==========================================================================
+   ACESSIBILIDADE (v2)
+   Tudo abaixo vem por último de propósito: sobrescreve regras anteriores
+   com a mesma especificidade.
+   ========================================================================== */
+
+/* ---------- Link "Pular para o conteúdo" ---------- */
+.skip-link {
+    position: absolute;
+    z-index: 200;
+    top: -100px;
+    left: 12px;
+    padding: 12px 18px;
+    background: var(--primary);
+    color: #FFFFFF;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 12px;
+}
+
+main:focus {
+    outline: none;
+}
+
+/* ---------- Foco visível (mais forte, com contorno duplo) ---------- */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px #FFFFFF;
+}
+
+/* ---------- Leitura em voz alta ---------- */
+.tts-reading {
+    outline: 3px dashed var(--secondary);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+.reader-toolbar {
+    position: fixed;
+    z-index: 90;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    max-width: calc(100% - 40px);
+    padding: 10px 12px;
+    background: var(--surface);
+    border: 2px solid var(--primary);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.reader-toolbar[hidden] {
+    display: none;
+}
+
+.reader-toolbar button,
+.reader-toolbar select {
+    min-height: 44px;
+    padding: 8px 12px;
+    background: var(--surface);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.reader-toolbar button:hover {
+    background: var(--background);
+}
+
+.reader-toolbar label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text);
+    font-weight: 700;
+}
+
+html.reader-on body {
+    padding-bottom: 84px;
+}
+
+@media (max-width: 700px) {
+    .reader-toolbar {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        max-width: none;
+    }
+
+    html.reader-on .system-toast {
+        bottom: 120px;
+    }
+
+    html.reader-on body {
+        padding-bottom: 130px;
+    }
+}
+
+/* ---------- Não depender só de cor: ícones em TODOS os modos ---------- */
+.request-status::before,
+.pev-status::before {
+    margin-right: 6px;
+    font-weight: 800;
+}
+
+.request-status.pending::before   { content: "…"; }
+.request-status.approved::before  { content: "✓"; }
+.request-status.rejected::before  { content: "✕"; }
+.request-status.completed::before { content: "★"; }
+
+.pev-status.available::before   { content: "✓"; }
+.pev-status.unavailable::before { content: "✕"; }
+
+.system-toast::before {
+    content: "✓";
+    margin-right: 8px;
+    font-weight: 800;
+}
+
+.system-toast.error::before {
+    content: "✕";
+}
+
+/* ---------- MODO PARA DALTONISMO (v2) ----------
+   Paleta semântica baseada no princípio Okabe-Ito (azul x laranja-queimado),
+   segura para protanopia, deuteranopia e tritanopia, mais uma pista que não é
+   cor em cada estado:  ✓ / ✕ / … / ★  +  estilo da borda
+   (sólida = positivo, tracejada = negativo, pontilhada = pendente,
+    preenchida = concluído).
+   Contraste texto/fundo: todos acima de 6,9:1.
+   -------------------------------------------------------------------- */
+body.colorblind-mode {
+    --cb-ok: #00508A;
+    --cb-ok-bg: #E1EEF9;
+    --cb-bad: #8A3600;
+    --cb-bad-bg: #FDEBDC;
+    --cb-pending: #3E4A55;
+    --cb-pending-bg: #E8EBEE;
+}
+
+/* Catálogo: aceito / não aceito (a classe usada no HTML é .not-accepted) */
+body.colorblind-mode .material-status.accepted {
+    color: var(--cb-ok);
+    background: var(--cb-ok-bg);
+    border-style: solid;
+}
+
+body.colorblind-mode .material-status.not-accepted,
+body.colorblind-mode .material-status.rejected {
+    color: var(--cb-bad);
+    background: var(--cb-bad-bg);
+    border-style: dashed;
+}
+
+/* Pontos de entrega */
+body.colorblind-mode .pev-status.available {
+    color: var(--cb-ok);
+    background: var(--cb-ok-bg);
+    border-style: solid;
+}
+
+body.colorblind-mode .pev-status.unavailable {
+    color: var(--cb-bad);
+    background: var(--cb-bad-bg);
+    border-style: dashed;
+}
+
+/* Solicitações */
+body.colorblind-mode .request-status.pending {
+    color: var(--cb-pending);
+    background: var(--cb-pending-bg);
+    border-style: dotted;
+    border-width: 2px;
+}
+
+body.colorblind-mode .request-status.approved {
+    color: var(--cb-ok);
+    background: var(--cb-ok-bg);
+    border-style: solid;
+}
+
+body.colorblind-mode .request-status.rejected {
+    color: var(--cb-bad);
+    background: var(--cb-bad-bg);
+    border-style: dashed;
+}
+
+body.colorblind-mode .request-status.completed {
+    color: #FFFFFF;
+    background: var(--cb-ok);
+    border-color: var(--cb-ok);
+    border-style: solid;
+}
+
+/* Botões de ação das solicitações (antes não mudavam no modo daltonismo) */
+body.colorblind-mode .request-actions .request-approve-button {
+    color: var(--cb-ok);
+    border-color: var(--cb-ok);
+    border-style: solid;
+}
+
+body.colorblind-mode .request-actions .request-reject-button {
+    color: var(--cb-bad);
+    border-color: var(--cb-bad);
+    border-style: dashed;
+}
+
+body.colorblind-mode .request-actions .request-complete-button {
+    color: var(--cb-ok);
+    border-color: var(--cb-ok);
+    border-style: solid;
+}
+
+/* Remover (ação destrutiva) deixa de ser azul e passa a usar o "negativo" */
+body.colorblind-mode .remove-calendar-button {
+    color: var(--cb-bad);
+    border-color: var(--cb-bad);
+    border-style: dashed;
+}
+
+body.colorblind-mode .remove-calendar-button:hover {
+    background: var(--cb-bad-bg);
+}
+
+/* Avisos do sistema */
+body.colorblind-mode .system-toast.error {
+    background: var(--cb-bad);
+    border-color: var(--cb-bad);
+}
+
+/* ---------- Reduz animações para quem prefere ---------- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .profile-card:hover {
+        transform: none;
     }
 }
